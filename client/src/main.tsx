@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
-import { SocketProvider } from './Socket.tsx';
-import { GameProvider } from './LocalGameState.tsx';
+import { SocketProvider } from './hooks/Socket.tsx';
+import { GameProvider } from './hooks/LocalGameState.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>

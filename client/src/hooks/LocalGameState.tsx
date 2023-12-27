@@ -1,17 +1,6 @@
-import { Player, BuildingType, MapGeometry } from '@shared/sharedTypes';
+import { Player, MapGeometry } from '@shared/sharedTypes';
 import React, { createContext, useContext, useState } from 'react';
-import { Euler, Vector3 } from 'three';
-
-type RenderBuildingData = {
-  buildingsType: BuildingType;
-  position: Vector3;
-  rotation: Euler;
-  color: string;
-};
-
-type RenderModifications = {
-  buildings: RenderBuildingData[];
-};
+import { RenderModifications } from 'src/types';
 
 interface GameContextType {
   roomId: string | null;
@@ -59,4 +48,4 @@ const GameProvider = ({ children }: GameProviderProps) => {
 };
 
 export { useGameContext, GameProvider };
-export type { GameContextType, RenderModifications, RenderBuildingData };
+export type { GameContextType };
