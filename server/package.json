@@ -8,7 +8,8 @@
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
     "build": "tsc -p ."
-  },
+  },  
+
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -27,6 +28,7 @@
     "@types/socket.io": "^3.0.2",
     "nodemon": "^3.0.2",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.3.3"
   }
 }

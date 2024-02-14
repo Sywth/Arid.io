@@ -35,7 +35,7 @@ type JoinRoom = {
   roomState: Room;
 };
 
-type BuildingType = 'headQuarters' | 'powerPlant';
+type BuildingType = 'headQuarters' | 'powerPlant' | 'ghost';
 type BuildingInstance = {
   buildingType: BuildingType;
   cutback: number;
@@ -67,7 +67,14 @@ type ServerAddedBuilding = ServerResponse & {
 type ServerPlayerJoined = ServerResponse & {
   player: Player;
 };
-
+enum SOCKET_EVENTS {
+  REQUEST_JOIN_ROOM = 'requestJoinRoom',
+  ROOM_JOINED = 'roomJoined',
+  NEW_PLAYER_JOINED_ROOM = 'newPlayerJoinedRoom',
+  ROOM_JOIN_ERROR = 'roomJoinError',
+  REQUEST_ADD_BUILDING = 'requestAddBuilding',
+  SERVER_ADDED_BUILDING = 'serverAddedBuilding',
+}
 export type {
   Player,
   Room,
@@ -83,3 +90,4 @@ export type {
   Vector3,
   ServerPlayerJoined,
 };
+export { SOCKET_EVENTS };

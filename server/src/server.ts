@@ -11,7 +11,8 @@ import {
   ServerAddedBuilding,
   BuildingInstance,
   ServerPlayerJoined,
-} from '@shared/sharedTypes';
+  SOCKET_EVENTS,
+} from '../../types/sharedTypes';
 import cors from 'cors';
 import { v4 as uuidv4 } from 'uuid';
 import { createNoise2D } from 'simplex-noise';
@@ -55,15 +56,6 @@ expressApp.get('/', (req, res) => {
     `,
   );
 });
-
-enum SOCKET_EVENTS {
-  REQUEST_JOIN_ROOM = 'requestJoinRoom',
-  ROOM_JOINED = 'roomJoined',
-  NEW_PLAYER_JOINED_ROOM = 'newPlayerJoinedRoom',
-  ROOM_JOIN_ERROR = 'roomJoinError',
-  REQUEST_ADD_BUILDING = 'requestAddBuilding',
-  SERVER_ADDED_BUILDING = 'serverAddedBuilding',
-}
 
 const rooms: { [roomId: string]: Room } = {};
 
